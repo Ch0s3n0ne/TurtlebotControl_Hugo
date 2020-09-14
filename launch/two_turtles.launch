@@ -2,16 +2,18 @@
 
 	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
 
-	<node pkg="turtlebot_control" type="basic_controllerV3.py" name="controller_1" output="screen">
+	<node pkg="turtlebot_control" type="basic_controllerV4.py" name="controller_1" output="screen">
 		<remap from="cmd_vel" to="turtle1/cmd_vel"/>
-		<param name="linear_speed" value="5.0"/>
-		<param name="angular_speed" value="5.0"/>
+		<remap from="pose" to="/turtle1/pose"/>
+		<param name="linear_speed" value="1.0"/>
+		<param name="angular_speed" value="20.0"/>
 	</node>
 
-	<node pkg="turtlebot_control" type="basic_controllerV3.py" name="controller_2" output="screen">
+	<node pkg="turtlebot_control" type="basic_controllerV4.py" name="controller_2" output="screen">
 		<remap from="cmd_vel" to="turtle2/cmd_vel"/>
-		<param name="linear_speed" value="5.0"/>
-		<param name="angular_speed" value="10.0"/>
+		<remap from="pose" to="/turtle2/pose"/>		
+		<param name="linear_speed" value="10.0"/>
+		<param name="angular_speed" value="20.0"/>
 		<param name="spawn_turtle_name" value="turtle2"/>
 	</node>
 
